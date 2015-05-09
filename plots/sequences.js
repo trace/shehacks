@@ -1,3 +1,4 @@
+var DATA_DIR = '/data/';
 
 // Dimensions of sunburst.
 var width = 750;
@@ -41,7 +42,7 @@ var arc = d3.svg.arc()
 
 // Use d3.text and d3.csv.parseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
-d3.text("test.csv", function(text) {
+d3.text(DATA_DIR + "test.csv", function(text) {
   var csv = d3.csv.parseRows(text);
   var json = buildHierarchy(csv);
   createVisualization(json);
@@ -260,6 +261,7 @@ function toggleLegend() {
     legend.style("visibility", "hidden");
   }
 }
+
 
 // Take a 2-column CSV and transform it into a hierarchical structure suitable
 // for a partition layout. The first column is a sequence of step names, from

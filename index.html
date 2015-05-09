@@ -10,6 +10,7 @@
 
 
 
+          <link rel="stylesheet" href="thirdparty/prettySocial/prettySocial.css" />
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 
 
@@ -42,9 +43,21 @@
 
       <link rel="stylesheet" href="bower_components/uikit/css/uikit.min.css" />
       <script src="bower_components/jquery/dist/jquery.js"></script>
+
+
+
+
+      <script src="thirdparty/prettySocial/jquery.prettySocial.min.js"></script>
+
+
       <script src="bower_components/uikit/js/uikit.min.js"></script>
 
 
+      <script src="bower_components/d3/d3.min.js"></script>
+      <!--<script src="bower_components/d3.v2.min.js"></script>-->
+      <!-- <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"> -->
+      <link rel="stylesheet" type="text/css" href="plots/sequences.css"/>
 
 
 <style>
@@ -68,6 +81,7 @@
 }
 .content-items {
   background: white;
+  min-height: 640px;
 }
 .left-side {
   background: yellow;
@@ -75,8 +89,48 @@
 .right-side {
   background: #ccc;
 }
+.graph-content {
+  background: #ff0099;
+}
+
+.scenario-content {
+  background: #ff9900;
+  font-weght: bold;
+  color: white;
+  min-height: 640px;
+}
+
+.scenario-1 {
+  background: green;
+}
+
+.scenario-2 {
+  background: orange;
+}
+
+.scenario-3 {
+  background: blue;
+}
+
+.scenario-4 {
+  background: purple;
+}
 
 
+.home-menu .social-container {
+  float: right;
+}
+
+.section-show {
+  background:red;
+  display:block;
+  visibility:visible;
+}
+.section-hide {
+  background:black;
+  display:none;
+  visibility:hidden;
+}
 </style>
 
 
@@ -88,6 +142,21 @@
     <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
         <a class="pure-menu-heading" href="">Your Site</a>
 
+
+        <div class="social-container">
+        		<div class="links">
+        			<a href="#" data-type="twitter" data-url="http://sonnyt.com/prettySocial" data-description="Custom share buttons for Pinterest, Twitter, Facebook and Google Plus." data-via="sonnyt" class="prettySocial fa fa-twitter"></a>
+
+        			<a href="#" data-type="facebook" data-url="http://sonnyt.com/prettySocial" data-title="prettySocial - custom social share buttons." data-description="Custom share buttons for Pinterest, Twitter, Facebook and Google Plus." data-media="http://sonnyt.com/assets/imgs/prettySocial.png" class="prettySocial fa fa-facebook"></a>
+
+        			<a href="#" data-type="googleplus" data-url="http://sonnyt.com/prettySocial" data-description="Custom share buttons for Pinterest, Twitter, Facebook and Google Plus." class="prettySocial fa fa-google-plus"></a>
+
+        			<a href="#" data-type="pinterest" data-url="http://sonnyt.com/prettySocial" data-description="Custom share buttons for Pinterest, Twitter, Facebook and Google Plus." data-media="http://sonnyt.com/assets/imgs/prettySocial.png" class="prettySocial fa fa-pinterest"></a>
+
+        			<a href="#" data-type="linkedin" data-url="http://sonnyt.com/prettySocial" data-title="prettySocial - custom social share buttons." data-description="Custom share buttons for Pinterest, Twitter, Facebook and Google Plus." data-via="sonnyt" data-media="http://sonnyt.com/assets/imgs/prettySocial.png" class="prettySocial fa fa-linkedin"></a>
+        		</div>
+
+        	</div>
         <!-- <ul class="pure-menu-list">
             <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
             <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tour</a></li>
@@ -113,18 +182,75 @@
 
       <div class="uk-grid content-items">
           <div class="uk-width-1-3 left-side">
-            <div>[Logo]</div>
-            <ul class="uk-nav uk-nav-side">
-                <li class="uk-active"><a href="#">Active</a></li>
-                <li><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
+            <ul class="uk-nav uk-nav-side js-navigation">
+                <li class="uk-active"><a href="#" tag="0">Industry</a></li>
+                <li><a href="#" tag="1">Pollutants</a></li>
+                <li><a href="#" tag="2">Area</a></li>
             </ul>
           </div>
-          <div class="uk-width-2-3 right-side">
-            <ul class="uk-tab" data-uk-tab>
-                <li class="uk-active"><a href="">Explore</a></li>
-                <li><a href="">Find out more</a></li>
-            </ul>
+          <div class="uk-width-2-3 right-side uk-height-1-1">
+
+            <div id="data-0">
+              <ul class="uk-tab" data-uk-tab  data-uk-switcher="{connect:'#tab-content'}">
+                  <li class="uk-active"><a href="">Explore</a></li>
+                  <li><a href="">Find out more</a></li>
+              </ul>
+
+              <ul id="tab-content" class="uk-switcher">
+
+
+                <li class="uk-active" aria-hidden="false">
+
+                  <div class="graph-content">Graphs
+
+                    <div id="main">
+                         <div id="sequence"></div>
+                         <div id="chart">
+                           <div id="explanation" style="visibility: hidden;">
+                             <span id="percentage"></span><br/>
+                             of visits begin with this sequence of pages
+                           </div>
+                         </div>
+                       </div>
+                       <div id="sidebar">
+                         <input type="checkbox" id="togglelegend"> Legend<br/>
+                         <div id="legend" style="visibility: hidden;"></div>
+                       </div>
+                       <script type="text/javascript" src="plots/sequences.js"></script>
+                       <script type="text/javascript">
+                         // Hack to make this example display correctly in an iframe on bl.ocks.org
+                         d3.select(self.frameElement).style("height", "700px");
+                     </script>
+
+                  </div>
+                </li>
+                <li aria-hidden="true" class="">
+
+                  <div class="uk-grid scenario-content uk-height-1-1">
+                    <div class="uk-width-1-4 scenario-1"><h3>Scenario 1</h3>Lorum ipsum</div>
+                    <div class="uk-width-1-4 scenario-2"><h3>Scenario 2</h3>Lorum ipsum</div>
+                    <div class="uk-width-1-4 scenario-3"><h3>Scenario 3</h3>Lorum ipsum</div>
+                    <div class="uk-width-1-4 scenario-4"><h3>What can I do?</h3>Lorum ipsum</div>
+                    </div>
+
+                </li>
+              </ul>
+            </div>
+            <div id="data-1">Data 2</div>
+            <div id="data-2">Data 3</div>
+<!--
+
+            <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#subnav-pill-content-1'}">
+                                            <li class="uk-active" aria-expanded="true"><a href="#">Item</a></li>
+                                            <li aria-expanded="false" class=""><a href="#">Item</a></li>
+                                            <li aria-expanded="false" class=""><a href="#">Item</a></li>
+                                        </ul>
+
+                        <ul id="subnav-pill-content-1" class="uk-switcher">
+                            <li class="uk-active" aria-hidden="false">Hello!</li>
+                            <li aria-hidden="true" class="">Hello again!</li>
+                            <li aria-hidden="true" class="">Bazinga!</li>
+                        </ul>-->
           </div>
       </div>
 
@@ -237,7 +363,67 @@
 
 </div>
 
+<script>
 
+
+function loadGraph() {
+
+    log('Loading graph...');
+
+}
+
+
+function setup() {
+  log('Start');
+  setupSocial();
+  setupNavigation();
+}
+
+
+function log(s) {
+
+  console.log(s);
+}
+
+function setupSocial() {
+  $('.prettySocial').prettySocial();
+}
+
+function setupNavigation() {
+
+  $('.js-navigation a').click(function() {
+    log('click');
+    var items = [0, 1, 2];
+    var selected = $(this).attr('tag');
+    log(selected);
+    $('.js-navigation a').each(function(index, item) {
+      var element = $('#data-' + index);
+      var parent = $(item).parent();
+      if(selected == index) {
+        log('showing: '+ index);
+        $(element).addClass('section-show').removeClass('section-hide');
+        $(parent).addClass('uk-active');
+
+      }
+      else {
+        log('hiding: '+ index);
+        $(element).addClass('section-hide').removeClass('section-show');
+        $(parent).removeClass('uk-active');
+      }
+
+    });
+    // var selectedItem = '#' + $(this).parent().attr('tag');
+    // var elements = ''
+
+  });
+}
+$(document).ready(function() {
+  setup();
+
+
+});
+
+</script>
 
 
 
