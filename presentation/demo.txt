@@ -1,0 +1,35 @@
+I will talk you through the a demo
+
+IDEA
+The idea behind Carbon Weight is to leverage digital media to convey a message.
+- It uses data that is freely available from various australian government websites
+- We analysed the data, came up with a narrative and presented it as an educational interactive website
+- It's target audience would range from environmentalists, lobbiests and educators and would be propogated as a social media campaign across various social media sites
+
+HOW
+Objective
+- to engage the user, through rich interactive media  and a meaningful narrative
+- encourage them to interact with & explore the data
+- learning more about the issue of carbon emissions
+- it also provide a means for the user to take action
+- ultimately leaving the user feeling positive and more empowered about the issue
+
+KEY CONCEPTS
+Key concepts behind the project
+- uses rich interactive digital media
+- compelling narrative
+- social sharing
+- aim of making subject matter accessible & understantable
+
+WRAP
+Naritive and rich interactive multimedia serve as an important educational tool
+- to aid in telling a compelling story
+- presenting complex data in an understandable manner, often this data is freely available
+- and assist with educating people around important issues.
+
+Real world potential:
+Use technology to analyse and present big data to uncover & present answers to intangible questions
+
+---
+Any Questions?
+----
