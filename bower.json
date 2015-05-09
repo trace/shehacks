@@ -1,8 +1,8 @@
 {
-  "name": "shehacks",
+  "name": "_hackathon",
   "version": "0.0.0",
   "authors": [
-    "Tracy Baving <tracy.baving@mi9.com.au>"
+    "trace <traceb@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
@@ -11,5 +11,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "pure": "~0.6.0",
+    "uikit": "~2.20.3"
+  }
 }
