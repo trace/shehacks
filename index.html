@@ -71,35 +71,40 @@
 }
 
 .content-wrapper {
-  background: #777;
+  /*background: #777;*/
   min-height: 760px;
   top: 50px;
 }
 
-.conent {
-  background: red;
+.content {
+  /*background: red;*/
 }
 .content-items {
   background: white;
   min-height: 640px;
 }
 .left-side {
-  background: yellow;
+  /*background: yellow;*/
 }
 .right-side {
-  background: #ccc;
+  /*background: #ccc;*/
 }
 .graph-content {
-  background: #ff0099;
+  /*background: #ff0099;*/
 }
 
 .scenario-content {
-  background: #ff9900;
+  /*background: #ff9900;*/
   font-weght: bold;
   color: white;
   min-height: 640px;
 }
 
+.scenario-content h3 {
+  color: white;
+
+  text-align: center;
+}
 .scenario-1 {
   background: green;
 }
@@ -109,7 +114,7 @@
 }
 
 .scenario-3 {
-  background: blue;
+  background: red;
 }
 
 .scenario-4 {
@@ -122,15 +127,19 @@
 }
 
 .section-show {
-  background:red;
   display:block;
   visibility:visible;
 }
 .section-hide {
-  background:black;
   display:none;
   visibility:hidden;
 }
+
+/*
+.uk-grid>* {
+  padding-left: 0;
+}*/
+
 </style>
 
 
@@ -191,17 +200,16 @@
           <div class="uk-width-2-3 right-side uk-height-1-1">
 
             <div id="data-0">
-              <ul class="uk-tab" data-uk-tab  data-uk-switcher="{connect:'#tab-content'}">
+
+
+              <ul class="uk-tab" data-uk-tab  data-uk-switcher="{connect:'#tab-content-0'}">
                   <li class="uk-active"><a href="">Explore</a></li>
                   <li><a href="">Find out more</a></li>
               </ul>
-
-              <ul id="tab-content" class="uk-switcher">
-
+              <ul id="tab-content-0" class="uk-switcher">
 
                 <li class="uk-active" aria-hidden="false">
-
-                  <div class="graph-content">Graphs
+                  <div class="graph-content">
 
                     <div id="main">
                          <div id="sequence"></div>
@@ -227,17 +235,131 @@
                 <li aria-hidden="true" class="">
 
                   <div class="uk-grid scenario-content uk-height-1-1">
-                    <div class="uk-width-1-4 scenario-1"><h3>Scenario 1</h3>Lorum ipsum</div>
-                    <div class="uk-width-1-4 scenario-2"><h3>Scenario 2</h3>Lorum ipsum</div>
-                    <div class="uk-width-1-4 scenario-3"><h3>Scenario 3</h3>Lorum ipsum</div>
-                    <div class="uk-width-1-4 scenario-4"><h3>What can I do?</h3>Lorum ipsum</div>
+                    <div class="uk-width-1-3 scenario-1"><h3>Scenario 1</h3>
+                    <img src="images/industry-1.png" />
+                    </div>
+                    <div class="uk-width-1-3 scenario-2"><h3>Scenario 2</h3>
+
+                      <img src="images/industry-2.png" />
+                    </div>
+                    <div class="uk-width-1-3 scenario-3"><h3>What Can I do?</h3>Lorum ipsum</div>
                     </div>
 
                 </li>
               </ul>
             </div>
-            <div id="data-1">Data 2</div>
-            <div id="data-2">Data 3</div>
+            <div id="data-1">
+
+              <ul class="uk-tab" data-uk-tab  data-uk-switcher="{connect:'#tab-content-1'}">
+                  <li class="uk-active"><a href="">Explore</a></li>
+                  <li><a href="">Find out more</a></li>
+              </ul>
+              <ul id="tab-content-1" class="uk-switcher">
+
+                <li class="uk-active" aria-hidden="false">
+                  <div class="graph-content">
+
+
+                    <iframe width="500" height="300" scrolling="no" frameborder="no"
+        src="https://www.google.com/fusiontables/embedviz?q=select+col0+from+1_9CpzzKICdERWJKUlNjoswt-qkOZFS2aoWwaT-KB+where+col15+%3D+&#39;Air+Total&#39;&amp;viz=MAP&amp;h=false&amp;lat=-37.59307231807633&amp;lng=144.51358411718752&amp;t=1&amp;z=8&amp;l=col0&amp;y=2&amp;tmplt=2&amp;hml=ONE_COL_LAT_LNG"></iframe>
+
+                  </div>
+                </li>
+                <li aria-hidden="true" class="">
+
+                  <div class="uk-grid scenario-content uk-height-1-1">
+                    <div class="uk-width-1-3 scenario-1"><h3>Scenario 1</h3>
+                    <img src="images/industry-1.png" />
+                    </div>
+                    <div class="uk-width-1-3 scenario-2"><h3>Scenario 2</h3>
+
+                      <img src="images/industry-2.png" />
+                    </div>
+                    <div class="uk-width-1-3 scenario-3"><h3>What Can I do?</h3>Lorum ipsum</div>
+                    </div>
+
+                </li>
+              </ul>
+
+            </div>
+            <div id="data-2">
+
+
+              <div class="content">
+                  <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+
+                  <div class="pure-g">
+                      <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                          <form class="pure-form pure-form-stacked">
+                              <fieldset>
+
+                                  <label for="name">Your Name</label>
+                                  <input id="name" type="text" placeholder="Your Name">
+
+
+                                  <label for="email">Your Email</label>
+                                  <input id="email" type="email" placeholder="Your Email">
+
+                                  <label for="password">Your Password</label>
+                                  <input id="password" type="password" placeholder="Your Password">
+
+                                  <button type="submit" class="pure-button">Sign Up</button>
+                              </fieldset>
+                          </form>
+                      </div>
+
+                      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                          <h4>Contact Us</h4>
+                          <p>
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                              consequat.
+                          </p>
+
+                          <h4>More Information</h4>
+                          <p>
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua.
+                          </p>
+                      </div>
+                  </div>
+
+              </div>
+            </div>
+
+
+                          <!-- <ul class="uk-tab" data-uk-tab  data-uk-switcher="{connect:'#tab-content-2'}">
+                              <li class="uk-active"><a href="">Explore</a></li>
+                              <li><a href="">Find out more</a></li>
+                          </ul>
+                          <ul id="tab-content-2" class="uk-switcher">
+
+                            <li class="uk-active" aria-hidden="false">
+                              <div class="graph-content">
+
+
+                                <iframe width="500" height="300" scrolling="no" frameborder="no"
+                    src="https://www.google.com/fusiontables/embedviz?q=select+col0+from+1_9CpzzKICdERWJKUlNjoswt-qkOZFS2aoWwaT-KB+where+col15+%3D+&#39;Air+Total&#39;&amp;viz=MAP&amp;h=false&amp;lat=-37.59307231807633&amp;lng=144.51358411718752&amp;t=1&amp;z=8&amp;l=col0&amp;y=2&amp;tmplt=2&amp;hml=ONE_COL_LAT_LNG"></iframe>
+
+                              </div>
+                            </li>
+                            <li aria-hidden="true" class="">
+
+                              <div class="uk-grid scenario-content uk-height-1-1">
+                                <div class="uk-width-1-3 scenario-1"><h3>Scenario 1</h3>
+                                <img src="images/industry-1.png" />
+                                </div>
+                                <div class="uk-width-1-3 scenario-2"><h3>Scenario 2</h3>
+
+                                  <img src="images/industry-2.png" />
+                                </div>
+                                <div class="uk-width-1-3 scenario-3"><h3>What Can I do?</h3>Lorum ipsum</div>
+                                </div>
+
+                            </li>
+                          </ul> -->
+
 <!--
 
             <ul class="uk-subnav uk-subnav-pill" data-uk-switcher="{connect:'#subnav-pill-content-1'}">
@@ -393,33 +515,35 @@ function setupNavigation() {
 
   $('.js-navigation a').click(function() {
     log('click');
-    var items = [0, 1, 2];
     var selected = $(this).attr('tag');
-    log(selected);
-    $('.js-navigation a').each(function(index, item) {
-      var element = $('#data-' + index);
-      var parent = $(item).parent();
-      if(selected == index) {
-        log('showing: '+ index);
-        $(element).addClass('section-show').removeClass('section-hide');
-        $(parent).addClass('uk-active');
 
-      }
-      else {
-        log('hiding: '+ index);
-        $(element).addClass('section-hide').removeClass('section-show');
-        $(parent).removeClass('uk-active');
-      }
+    showNav(selected);
 
-    });
+
     // var selectedItem = '#' + $(this).parent().attr('tag');
     // var elements = ''
 
   });
 }
+
+function showNav(selected) {
+    $('.js-navigation a').each(function(index, item) {
+      var element = $('#data-' + index);
+      var parent = $(item).parent();
+      if(selected == index) {
+        $(element).addClass('section-show').removeClass('section-hide');
+        $(parent).addClass('uk-active');
+
+      }
+      else {
+        $(element).addClass('section-hide').removeClass('section-show');
+        $(parent).removeClass('uk-active');
+      }
+    });
+}
 $(document).ready(function() {
   setup();
-
+  showNav(0);
 
 });
 
