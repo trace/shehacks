@@ -1,4 +1,4 @@
-
+var DATA_DIR = '/data/'
 // Dimensions of sunburst.
 var width = 750;
 var height = 600;
@@ -167,7 +167,7 @@ var arc = d3.svg.arc()
 
 // Use d3.text and d3.csv.parseRows so that we do not need to have a header
 // row, and can receive the csv as an array of arrays.
-d3.text("realData.csv", function(text) {
+d3.text(DATA_DIR + "realData.csv", function(text) {
   var csv = d3.csv.parseRows(text);
   var json = buildHierarchy(csv);
   createVisualization(json);
@@ -219,12 +219,13 @@ function mouseover(d) {
     percentageString = "< 0.1%";
   }
 // d.name
-  d3.select("#name").text(d.name)
+  d3.select("#plot-name").text(d.name);
 
-  d3.select("#percentage")
+
+  d3.select("#plot-percentage")
       .text(percentageString);
 
-  d3.select("#explanation")
+  d3.select("#plot-explanation")
       .style("visibility", "");
 
   var sequenceArray = getAncestors(d);

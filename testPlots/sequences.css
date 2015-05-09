@@ -1,11 +1,11 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   font-weight: 400;
   background-color: #fff;
   width: 960px;
   height: 700px;
-  margin-top: 10px;
+  margin-top: 10px;*/
 }
 
 #main {
@@ -40,16 +40,16 @@ body {
   stroke: #fff;
 }
 
-#explanation {
+#plot-explanation {
   position: absolute;
   top: 260px;
   left: 305px;
   width: 140px;
   text-align: center;
   color: #666;
-  z-index: -1;
+  /*z-index: -1;*/
 }
 
-#percentage {
+#plot-percentage {
   font-size: 2.5em;
 }
